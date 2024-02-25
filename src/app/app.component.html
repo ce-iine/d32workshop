@@ -1,0 +1,36 @@
+<app-todo (addTask)="addToList($event)"></app-todo>
+
+
+<br><br>
+
+<h2>your tasks</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <td>Description</td>
+      <td>Priority</td>
+      <td>Due Date</td>
+      <td>Completed</td>
+      <td>Delete</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todoList">
+      <td>
+        {{ todo.description }}
+      </td>
+      <td>
+        {{ todo.priority }}
+      </td>
+      <td>
+        {{ todo.completeBy }}
+      </td>
+      <td>
+        <input type="checkbox">
+    </td>
+    <td>
+      <button type="button" (click)="deleteTask(todo)">X</button>
+  </td>
+    </tr>
+  </tbody>
+</table>
